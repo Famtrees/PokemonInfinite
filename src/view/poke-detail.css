@@ -1,0 +1,20 @@
+.detail {
+    color: white;
+    background-color: black;
+    border: solid 1px blue;
+    padding: 16px;
+    margin:  4px;
+}
+
+.types {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.type-name {
+    border-radius: 16px;
+    padding: 8px;
+    margin: 4px;
+    width: 64px;
+}
