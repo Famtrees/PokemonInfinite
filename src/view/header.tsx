@@ -1,11 +1,13 @@
 import React from 'react'
+import { useDispatch } from "react-redux";
 
-// onClick={() => setTypes(!isTypes)}
+import './header.css'
 
 const Header = () => {
+    const dispatch = useDispatch()
     return (
         <div className="header">
-            <button>
+            <button onClick={()=>dispatch({type: 'SET_TYPES'})}>
                 Toggle Types
             </button>
         </div>

@@ -16,7 +16,7 @@ const PokeList = ({children}: Props) => {
     const isEnd = useScroll()
     const list: List = usePokemonList(isEnd)
     
-    return useMemo(() =>
+    return (
         <div className="container">
             {Object.values(list).map((pokemon: Pokemon) => 
                 children({
@@ -25,7 +25,7 @@ const PokeList = ({children}: Props) => {
                 })
             )}
         </div>
-    , [Object.values(list).length])
+    )
 }
 
 export default PokeList

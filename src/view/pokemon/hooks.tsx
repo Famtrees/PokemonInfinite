@@ -3,7 +3,7 @@ import throttle from 'lodash.throttle'
 import List, {ListRes, Pokemon, cleanData} from '../../model/pokemon'
 
 
-const defNext = 'https://pokeapi.co/api/v2/pokemon?limit=25&offset=0'
+const defNext = 'https://pokeapi.co/api/v2/pokemon?limit=5&offset=0'
 const throttleFetch = throttle(cb => cb(), 400, {leading: true, trailing: false})
 
 export const usePokemonList = (shouldFetch: boolean) => {
