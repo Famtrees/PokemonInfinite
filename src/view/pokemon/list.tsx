@@ -3,12 +3,12 @@ import { usePokemonList, useScroll } from "./hooks";
 import List, {Pokemon} from '../../model/pokemon'
 import './list.css'
 
-interface ChildProps {
+type ChildProps = {
     key: string, 
     details: Pokemon
 }
 
-interface Props {
+type Props = {
     children(props: ChildProps): JSX.Element
 }
 

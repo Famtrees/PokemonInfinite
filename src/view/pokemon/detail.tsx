@@ -12,14 +12,12 @@ type Props = {
 
 const PokeDetail = ({details, isTypes}: Props) => {
     const pokemon = usePokemon(details)
-    const isFront = useTimeout()
-    
-    console.log(isTypes);
-    
+    // const isFront = useTimeout()
+        
     return useMemo(() => pokemon.createdAt ? (
         <div className="detail">
             <h2>{pokemon.name}</h2>
-            <img src={pokemon.sprites?.[isFront ? 0: 1]} alt={pokemon.name}/>
+            <img src={pokemon.sprites?.[0]} alt={pokemon.name}/>
             { isTypes && (
                 <div className="types">
                     {pokemon.types?.map(type => 
@@ -28,7 +26,7 @@ const PokeDetail = ({details, isTypes}: Props) => {
                 </div>            
             )}
         </div>
-     ): null, [isFront, isTypes, pokemon.createdAt])
+     ): null, [isTypes, pokemon.createdAt])
 }
 
 export default PokeDetail

@@ -1,8 +1,10 @@
-export default interface List {
+ 
+type List = {
     [name: string]: Pokemon
 }
+export default List
 
-export interface Pokemon {
+export type Pokemon = {
     id: number
     name: string
     url: string 
@@ -12,16 +14,16 @@ export interface Pokemon {
     createdAt?: number
 }
 
-export interface ListRes {
+export type ListRes = {
     results: Pokemon[]
     next: string
 }
 
-interface Moves {
+type Moves = {
     move: { name: string }
 }
 
-interface Types {
+type Types = {
     type: { name: string }
 }
 

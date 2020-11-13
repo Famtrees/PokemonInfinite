@@ -1,25 +1,15 @@
 import React, {useState} from 'react';
+import Pokemon from './view/pokemon'
+import Header from './view/header'
 import './app.css';
 
-import {PokeList, PokeDetail} from './view/pokemon'
-
 function App() {
-
   const [isTypes, setTypes] = useState<boolean>(true)
-  const onToggle = () => setTypes(!isTypes)
-  console.log(isTypes);
-  
 
   return (
     <div className="app">
-      <div className="app-header">
-        <button onClick={onToggle}>
-          Toggle Types
-        </button>
-      </div>
-      <PokeList>
-        {props =>  <PokeDetail isTypes={isTypes} {...props}/> }
-      </PokeList> 
+      <Header/>
+      <Pokemon/>
     </div>
   );
 }
