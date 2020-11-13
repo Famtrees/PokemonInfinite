@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './App.css';
+import './app.css';
 
 import {PokeList, PokeDetail} from './view/pokemon'
 
@@ -7,10 +7,12 @@ function App() {
 
   const [isTypes, setTypes] = useState<boolean>(true)
   const onToggle = () => setTypes(!isTypes)
+  console.log(isTypes);
+  
 
   return (
-    <div className="App">
-      <div className="App-header">
+    <div className="app">
+      <div className="app-header">
         <button onClick={onToggle}>
           Toggle Types
         </button>

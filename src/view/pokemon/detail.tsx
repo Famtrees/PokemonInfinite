@@ -1,8 +1,8 @@
-import React from 'react'
-import Pokemon from '../model/pokemon'
-import {usePokemon, useTimeout} from '../lib/hooks'
+import React, {useMemo} from 'react'
+import {Pokemon} from '../../model/pokemon'
+import {usePokemon, useTimeout} from './hooks'
 
-import './poke-detail.css'
+import './detail.css'
 import './type-colors.css'
 
 type Props = {
@@ -13,8 +13,10 @@ type Props = {
 const PokeDetail = ({details, isTypes}: Props) => {
     const pokemon = usePokemon(details)
     const isFront = useTimeout()
-
-    return (
+    
+    console.log(isTypes);
+    
+    return useMemo(() => pokemon.createdAt ? (
         <div className="detail">
             <h2>{pokemon.name}</h2>
             <img src={pokemon.sprites?.[isFront ? 0: 1]} alt={pokemon.name}/>
@@ -26,7 +28,7 @@ const PokeDetail = ({details, isTypes}: Props) => {
                 </div>            
             )}
         </div>
-    )
+     ): null, [isFront, isTypes, pokemon.createdAt])
 }
 
 export default PokeDetail
